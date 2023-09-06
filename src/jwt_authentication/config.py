@@ -4,9 +4,9 @@ from pathlib import Path
 
 
 HERE = Path(__file__).parent
-SQLITE_DEV = "sqlite:///" + str(HERE / "admin_jwt_authentication_dev.db")
-SQLITE_TEST = "sqlite:///" + str(HERE / "admin_jwt_authentication_test.db")
-SQLITE_PROD = "sqlite:///" + str(HERE / "admin_jwt_authentication_prod.db")
+SQLITE_DEV = "sqlite:///" + str(HERE / "jwt_authentication_dev.db")
+SQLITE_TEST = "sqlite:///" + str(HERE / "jwt_authentication_test.db")
+SQLITE_PROD = "sqlite:///" + str(HERE / "jwt_authentication_prod.db")
 
 
 class Config:
