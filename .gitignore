@@ -3,7 +3,7 @@
 .vscode
 .python-version
 tmp
-venv
+vevn
 *.rdb
 *.db
 *.DS_Store
