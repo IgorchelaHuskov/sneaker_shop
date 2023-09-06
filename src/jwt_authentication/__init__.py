@@ -5,7 +5,7 @@ from flask_cors import CORS
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
-from jwt_authentication import get_config
+from jwt_authentication.config import get_config
 
 cors = CORS()
 db = SQLAlchemy()
