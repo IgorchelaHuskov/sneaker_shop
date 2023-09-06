@@ -40,7 +40,7 @@ EXTRAS_REQUIRE = {
 }
 
 setup(
-    name="sneaker_shop.",
+    name="sneaker_shop",
     description=DESCRIPTION,
     long_description=README,
     long_description_content_type="text/markdown",
@@ -49,7 +49,7 @@ setup(
     author_email=AUTHOR_EMAIL,
     maintainer=AUTHOR,
     maintainer_email=AUTHOR_EMAIL,
-    url="https://github.com/IgorchelaHuskov/admin-jwt-authentication",
+    url="https://github.com/IgorchelaHuskov/sneaker_shop",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     python_requires=">=3.11",
