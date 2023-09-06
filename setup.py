@@ -1,4 +1,4 @@
-"""Скрипт установки приложения admin-jwt-authentication."""
+"""Скрипт установки приложения sneaker_shop."""
 from pathlib import Path
 from setuptools import setup, find_packages
 
@@ -40,7 +40,7 @@ EXTRAS_REQUIRE = {
 }
 
 setup(
-    name="admin-jwt-authentication",
+    name="sneaker_shop.",
     description=DESCRIPTION,
     long_description=README,
     long_description_content_type="text/markdown",
