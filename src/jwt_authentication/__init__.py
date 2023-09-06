@@ -5,7 +5,7 @@ from flask_cors import CORS
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
-from admin_jwt_authentication import get_config
+from jwt_authentication import get_config
 
 cors = CORS()
 db = SQLAlchemy()
@@ -14,7 +14,7 @@ bcrypt = Bcrypt()
 
 
 def create_app(config_name):
-    app = Flask("admin_jwt_authentication")
+    app = Flask("jwt_authentication")
     app.config.from_object(get_config(config_name))
 
     cors.init_app(app)
