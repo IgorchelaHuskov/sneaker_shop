@@ -40,7 +40,7 @@ EXTRAS_REQUIRE = {
 }
 
 setup(
-    name="jwt_authentication",
+    name="sneaker_shop",
     description=DESCRIPTION,
     long_description=README,
     long_description_content_type="text/markdown",
