@@ -23,7 +23,7 @@ class User(db.Model):
     email = db.Column(db.String(256), unique=True, nullable=False)
     password_hash = db.Column(db.String(100), nullable=False)
     registered_on = db.Column(db.DateTime, default=uts_now)
-    admin = db.Column(db.Bolean, default=False)
+    admin = db.Column(db.Boolean, default=False)
     public_id = db.Column(db.String(36), unique=True, default=lambda: str(uuid4()))
 
     def __repr__(self):
