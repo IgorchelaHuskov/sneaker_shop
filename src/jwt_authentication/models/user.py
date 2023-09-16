@@ -1,7 +1,8 @@
 """Определение класса для модели пользователя.""" 
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from uuid import uuid4
 
+import jwt
 from flask import current_app
 from sqlalchemy.ext.hybrid import hybrid_property
 
@@ -52,6 +53,17 @@ class User(db.Model):
     def check_passsword(self, password):
         return bcrypt.check_password_hash(self.password_hash, password)
     
+    def encode_access_token(self):
+        now = datetime.now(timezone.utc)
+        token_age_h = current_app.config.get("TOKEN_EXPIRE_HOURS")
+        token_age_m = current_app.config.get("TOKEN_EXPIRE_MINUTES")
+        expire = now + timedelta(hours=token_age_h, minutes=token_age_m)
+        if current_app.config["TESTING"]:
+            expire = now + timedelta(seconds=5)
+        payload = dict(exp=expire, iat=now, sub=self.public_id, admin=self.admin)
+        key = current_app.config.get("SECRET_KEY")
+        return jwt.encode(payload, key, algorithm="HS256")
+    
     @classmethod
     def find_by_email(cls, email):
         return cls.query.filter_by(email=email).first()
@@ -59,3 +71,4 @@ class User(db.Model):
     @classmethod
     def find_by_public_id(cls, public_id):
         return cls.query.filter_by(public_id=public_id).first()
+    
