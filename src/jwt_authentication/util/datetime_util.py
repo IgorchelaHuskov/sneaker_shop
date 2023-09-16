@@ -24,7 +24,7 @@ timespan = namedtuple(
     ],
 )
 
-def uts_now():
+def utc_now():
     """Текущая дата и время в формате UTC со значением в микросекундах, нормализованным до нуля.""" 
     return datetime.now(timezone.utc).replace(microsecond=0)
 
